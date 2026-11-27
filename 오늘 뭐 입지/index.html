@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>오늘 뭐 입지?</title>
+</head>
+<body>
+<h1>오늘 뭐 입지?</h1>
+<p>오늘 날씨에 맞는 옷을 추천해 드려요!</p>
+
+<h2>오늘 기온은?</h2>
+<input type="number" id="temp" placeholder="기온 입력">
+
+<h2>오늘 날씨는?</h2>
+<select id="weather">
+<option>맑음</option>
+<option>흐림</option>
+<option>비</option>
+<option>눈</option>
+</select>
+
+<button onclick="recommend()">옷 추천받기</button>
+
+<h2 id="result">추천 옷이 여기에 나와요!</h2>
+
+<script>
+function recommend() {
+let temp = Number(document.getElementById("temp").value);
+let result = "";
+
+if (temp <= 5) {
+result = "두꺼운 패딩과 목도리를 추천해요!";
+} else if (temp <= 15) {
+result = "코트나 가디건을 추천해요!";
+} else if (temp <= 25) {
+result = "긴팔이나 얇은 겉옷을 추천해요!";
+} else {
+result = "시원한 반팔을 추천해요!";
+}
+
+document.getElementById("result").innerText = result;
+}
+</script>
+</body>
+</html>
